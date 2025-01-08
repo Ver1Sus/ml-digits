@@ -1,8 +1,8 @@
 # ML-digits
-FastAPI project (Python 3.9) with pretrained SVM.
-Provides versionized routes for digit recognition from data-array, or picture (`image` group).
-SQLite DB contain requests, prediction time, response, which used for analytic routes (`analytics` group).
-Also, `healtcheck` for requirement monitoring
+FastAPI project (Python 3.9) with a pretrained SVM (`app/api/v1/models/svm_digits_model.pkl`).
+Provides versioned routes for digit recognition from data arrays or images (`image` group).
+SQLite DB contains requests, prediction time, and responses, which are used for analytics routes (`analytics` group).
+Also, `healthcheck` route for monitoring system status.
 
 ## Project map
 ```
@@ -10,7 +10,7 @@ ml-digits/
 ├── app/
 │   ├── main.py                    # Entry point for the FastAPI app
 │   ├── api/                       
-│   │   ├── v1/                    # Version 1 of your API 
+│   │   ├── v1/                    # Version 1 of API 
 │   │   │   ├── endpoints/         # Contains all the endpoint route handlers
 │   │   │   ├── models/            # Contains SVM (for future - Pydantic models and database models)
 │   │   │   ├── schemas/           # Pydantic schemas for request and response validation
@@ -37,6 +37,6 @@ ml-digits/
 
 
 ## TODO
-1. Queue manager (Kafka) between DB, if the project expected high RPS.
-2. ORM (SQLAlchemy), if the project expected scaling or complicated relationships.
-3. Auth, if the project expected security.
+1. Queue manager (Kafka) between DB if the project expects high RPS.
+2. ORM (SQLAlchemy), if the project expects scaling or complicated relationships.
+3. Auth if the project expects security.
